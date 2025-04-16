@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -23,6 +24,9 @@ public class BaseClass_Test {
 	PropertiesUtility pUtil =new PropertiesUtility();
 	WebDriverUtility wUtil =new WebDriverUtility();
 	ThreadLocal<WebDriver> driverRef = new ThreadLocal();
+	String partialadminUrl="admin";
+	String partialPatientUrl="user-login.php";
+	String partialUrl="user-login.php";
 	
 
 	@BeforeSuite
@@ -50,11 +54,11 @@ public class BaseClass_Test {
 		wUtil.accesToApplication(driver, url);
 		
 	}
-//	@BeforeMethod
-//	public void loginAsAdmin()
-//	{
-//		
-//	}
+	@BeforeMethod
+	public void loginAsAdmin()
+	{
+		
+	}
 	
 	@AfterMethod
 	public void logoutFromApplication()
