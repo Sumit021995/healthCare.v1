@@ -15,6 +15,14 @@ public class HomePage {
 		return loginsLink;
 	}
 
+	public WebElement getPatientLoginLink() {
+		return patientLoginLink;
+	}
+
+	public WebElement getDoctorLoginLink() {
+		return doctorLoginLink;
+	}
+
 	public WebElement getAdminLoginLink() {
 		return adminLoginLink;
 	}
