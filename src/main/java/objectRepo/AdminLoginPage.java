@@ -36,5 +36,9 @@ public class AdminLoginPage {
 	{
 		adminUNTextField.sendKeys(username,Keys.TAB,password,Keys.ENTER);
 	}
+	public void loginAsAdmin()
+	{
+		adminUNTextField.sendKeys("admin",Keys.TAB,"Test@12345",Keys.ENTER);
+	}
 	
 }

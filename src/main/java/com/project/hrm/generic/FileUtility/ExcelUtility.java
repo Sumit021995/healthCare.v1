@@ -34,6 +34,24 @@ public class ExcelUtility {
 		return value;
 
 	}
+	public Sheet getSheetRefFromExcel(String sheetName) throws EncryptedDocumentException, IOException
+	{
+		FileInputStream file = new FileInputStream(IPathUtility.excelFilePath);
+		Workbook wb = WorkbookFactory.create(file);
+		Sheet sheet=wb.getSheet(sheetName);
+		wb.close();
+		return sheet;
+		
+	}
+	public Row getRowRefFromExcel(String sheetName,int rowCount) throws EncryptedDocumentException, IOException
+	{
+		FileInputStream file = new FileInputStream(IPathUtility.excelFilePath);
+		Workbook wb = WorkbookFactory.create(file);
+		Row row=wb.getSheet(sheetName).getRow(rowCount);
+		wb.close();
+		return row;
+		
+	}
 
 	public List<String> getMultipleDataFromExcelFileFirstColumn(String sheetName, int firstRowNum, int firstCellNum)
 			throws EncryptedDocumentException, IOException {
